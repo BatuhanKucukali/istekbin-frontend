@@ -11,7 +11,7 @@ Vue.config.productionTip = false
 
 const routes = [
     {path: '/', component: Home},
-    {path: '/r', component: Request},
+    {path: '/r/:uuid', component: Request},
 ]
 
 const router = new VueRouter({

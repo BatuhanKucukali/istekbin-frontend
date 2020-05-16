@@ -7,7 +7,6 @@
                 <a href="#" class="btn btn-success my-2"><i class="fa fa-plus" aria-hidden="true"></i> Create a
                     BinRequest</a>
             </p>
-            <router-link to="/request">Link</router-link>
         </div>
     </section>
 </template>
