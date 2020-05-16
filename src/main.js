@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
+import Moment from "vue-moment"
 
 Vue.use(VueRouter)
+Vue.use(Moment)
 
 import App from './App.vue'
 import Home from "./components/Home";

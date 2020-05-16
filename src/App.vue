@@ -40,6 +40,8 @@
 
     .info-text {
         font-family: "Helvetica Neue";
+        width: 100%;
+        text-align: center;
     }
 
     .request-main {
@@ -59,6 +61,7 @@
         line-height: 1.45;
         background-color: #f6f8fa;
         border-radius: 3px;
+        min-height: 52px;
     }
 
     .highlight pre {
