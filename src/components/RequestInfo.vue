@@ -13,10 +13,8 @@
             <div class="row justify-content-md-center">
                 <p class="info-text">No requests received yet.</p>
                 <p class="info-text">Try one of these and refresh to see the results:</p>
-                <ul>
-                    <li><code>curl -H 'X-Status: Awesome' {{requestUrl}}</code></li>
-                    <li><code>wget {{requestUrl}}?hello=world</code></li>
-                </ul>
+                <p><code>curl -H 'X-Status: Awesome' {{requestUrl}}</code></p>
+                <p><code>wget {{requestUrl}}?hello=world</code></p>
             </div>
         </div>
 
