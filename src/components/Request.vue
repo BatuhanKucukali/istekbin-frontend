@@ -2,9 +2,15 @@
     <div class="container request-main">
         <h2>Requests</h2>
 
-        <template v-for="request in requests">
-            <request-item :request=request :key="request.created_at"></request-item>
+        <template v-if="requests.length == 0">
+            <request-info></request-info>
         </template>
+
+        <div v-if="requests.length > 0">
+            <template v-for="request in requests">
+                <request-item :request=request :key="request.created_at"></request-item>
+            </template>
+        </div>
 
 
     </div>
@@ -12,10 +18,11 @@
 
 <script>
     import RequestItem from "./RequestItem";
+    import RequestInfo from "./RequestInfo";
 
     export default {
         name: 'Request',
-        components: {RequestItem},
+        components: {RequestInfo, RequestItem},
         data() {
             return {
                 requests: []
