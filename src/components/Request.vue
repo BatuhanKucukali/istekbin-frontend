@@ -2,7 +2,7 @@
     <div class="container request-main">
         <h2>Requests</h2>
 
-        <template v-if="requests.length == 0">
+        <template v-if="requests.length === 0">
             <request-info></request-info>
         </template>
 
@@ -29,7 +29,7 @@
             }
         },
         created() {
-            fetch(`http://localhost:3000/l/${this.$route.params.uuid}`)
+            fetch(`${process.env.VUE_APP_API_BASE_URL}/l/${this.$route.params.uuid}`)
                 .then((res) => {
                     return res.json()
                 })
