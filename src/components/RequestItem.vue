@@ -2,7 +2,10 @@
     <div class="div">
         <div class="request">
             <div class="request-block">
-                <h4>{{request.method}} / {{request.created_at}}</h4>
+                <div class="row">
+                    <div class="col-6"><h4>{{request.method}}</h4></div>
+                    <div class="col-6"><h4 class="float-right">{{request.created_at}}</h4></div>
+                </div>
             </div>
 
             <div class="request-block">
