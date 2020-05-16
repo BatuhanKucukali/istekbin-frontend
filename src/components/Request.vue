@@ -30,8 +30,8 @@
         },
         created() {
             fetch(`${process.env.VUE_APP_API_BASE_URL}/l/${this.$route.params.uuid}`)
-                .then((res) => {
-                    return res.json()
+                .then((response) => {
+                    return response.json()
                 })
                 .then((requests) => this.requests = requests)
         }

@@ -9,19 +9,37 @@
                     Create a
                     BinRequest</a>
             </p>
+
+            <alert v-if="error"></alert>
+
         </div>
     </section>
 </template>
 
 <script>
+    import Alert from "./Alert";
+
     export default {
         name: 'Home',
+        components: {Alert},
+        data: function () {
+            return {
+                error: false
+            }
+        },
         methods: {
             create() {
-                fetch('http://localhost:1323/c/', {method: 'post'})
+                fetch(`${process.env.VUE_APP_API_BASE_URL}/c/`, {method: 'post'})
                     .then(function (response) {
+                        if (!response.ok) {
+                            return Promise.reject(response);
+                        }
                         window.location = 'r/' + response.headers.get("Location")
                     })
+                    .catch(error => {
+                        this.error = true
+                        console.log(error)
+                    });
             }
         }
     }
