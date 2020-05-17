@@ -4,8 +4,8 @@
             <h1>Inspect HTTP Requests</h1>
             <p class="lead text-muted">BinRequest is a free service that allows you to collect http request.</p>
             <p>
-                <a href="javascript:void(0)" v-on:click="create()" class="btn btn-success my-2"><i class="fa fa-plus"
-                                                                                                   aria-hidden="true"></i>
+                <a href="#" v-on:click.prevent.once="create()" class="btn btn-success my-2"><i class="fa fa-plus"
+                                                                                               aria-hidden="true"></i>
                     Create a
                     BinRequest</a>
             </p>
