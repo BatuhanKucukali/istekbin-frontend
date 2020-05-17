@@ -1,4 +1,4 @@
-# binrequest-vue
+# istekbin-frontend
 
 ## Project setup
 ```
