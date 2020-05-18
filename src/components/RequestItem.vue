@@ -48,7 +48,7 @@
             <div class="request-block">
                 <h5>Body</h5>
                 <div class="highlight">
-                    <pre><code>{{request.body}}</code></pre>
+                    <pre><code>{{beautify(request.body)}}</code></pre>
                 </div>
             </div>
         </div>
@@ -62,6 +62,17 @@
         name: 'RequestItem',
         props: {
             request: {type: Object, required: true}
+        },
+        methods: {
+            beautify(text) {
+                try{
+                    var obj = JSON.parse(text)
+                    return JSON.stringify(obj, null, 2)
+                }
+                catch(e) {
+                    return text;
+                }
+            }
         }
     }
 </script>
