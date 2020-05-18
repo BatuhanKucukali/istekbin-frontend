@@ -25,7 +25,7 @@ yarn serve
 
 - [ ] 404 page
 - [ ] ui improvements
-- [ ] implement json beautifier
+- [x] implement json beautifier
 - [ ] add example support for other language
 
 
