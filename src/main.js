@@ -7,6 +7,7 @@ Vue.use(Moment)
 
 import App from './App.vue'
 import Home from "./components/Home";
+import NotFound from "./components/NotFound";
 import Request from "./components/Request";
 
 Vue.config.productionTip = false
@@ -14,6 +15,7 @@ Vue.config.productionTip = false
 const routes = [
     {path: '/', component: Home},
     {path: '/r/:uuid', component: Request},
+    {path: '/*', component: NotFound},
 ]
 
 const router = new VueRouter({

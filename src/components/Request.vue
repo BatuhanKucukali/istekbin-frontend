@@ -13,26 +13,36 @@
             </template>
         </div>
 
-
+        <div v-if="notFound == true">
+            <not-found></not-found>
+        </div>
     </div>
 </template>
 
 <script>
     import RequestItem from "./RequestItem";
     import RequestInfo from "./RequestInfo";
+    import NotFound from "./NotFound";
 
     export default {
         name: 'Request',
-        components: {RequestInfo, RequestItem},
+        components: {RequestInfo, RequestItem, NotFound},
         data() {
             return {
-                requests: []
+                requests: [],
+                notFound: false
             }
         },
         created() {
             fetch(`${process.env.VUE_APP_API_BASE_URL}/l/${this.$route.params.uuid}`)
                 .then((response) => {
-                    return response.json()
+                   if (response.status == 200) {
+                       this.notFound = false;
+                    } else {
+                        this.notFound = true;
+                    }
+                return response.json();          
+
                 })
                 .then((requests) => this.requests = requests)
         }

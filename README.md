@@ -23,7 +23,7 @@ yarn serve
 
 ## Todo
 
-- [ ] 404 page
+- [x] 404 page
 - [ ] ui improvements
 - [x] implement json beautifier
 - [ ] add example support for other language
