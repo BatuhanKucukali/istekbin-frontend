@@ -1,4 +1,4 @@
-# Istekbin-Frontened - Inspect HTTP Requests
+# Istekbin-Frontend - Inspect HTTP Requests
 
 Istekbin is a free service that allows you to collect http request.
 
