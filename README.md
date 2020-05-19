@@ -27,6 +27,7 @@ yarn serve
 - [ ] ui improvements
 - [x] implement json beautifier
 - [ ] add example support for other language
+- [ ] auto refresh when new request
 
 
 ## Getting help
