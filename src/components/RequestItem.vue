@@ -41,14 +41,21 @@
             <div class="request-block">
                 <h5>Headers</h5>
                 <div class="highlight">
-                    <pre><code>{{request.header}}</code></pre>
+                    <pre><code>{{request.headers | jsonEmtpyFormat}}</code></pre>
                 </div>
             </div>
 
             <div class="request-block">
                 <h5>Body</h5>
                 <div class="highlight">
-                    <pre><code>{{beautify(request.body)}}</code></pre>
+                    <pre><code>{{request.body | beautify}}</code></pre>
+                </div>
+            </div>
+
+            <div class="request-block">
+                <h5>Cookies</h5>
+                <div class="highlight">
+                    <pre><code>{{request.cookies | jsonEmtpyFormat}}</code></pre>
                 </div>
             </div>
         </div>
@@ -63,13 +70,18 @@
         props: {
             request: {type: Object, required: true}
         },
-        methods: {
-            beautify(text) {
-                try{
-                    var obj = JSON.parse(text)
-                    return JSON.stringify(obj, null, 2)
+        filters: {
+            jsonEmtpyFormat: function (value) {
+                if (Object.keys(value).length === 0) {
+                    return ""
                 }
-                catch(e) {
+                return value
+            },
+            beautify: function (text) {
+                try {
+                    const obj = JSON.parse(text);
+                    return JSON.stringify(obj, null, 2)
+                } catch {
                     return text;
                 }
             }
