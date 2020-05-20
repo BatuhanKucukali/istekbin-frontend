@@ -41,7 +41,7 @@
             <div class="request-block">
                 <h5>Headers</h5>
                 <div class="highlight">
-                    <pre><code>{{request.headers | jsonEmtpyFormat}}</code></pre>
+                    <pre><code>{{request.headers | jsonEmptyFormat}}</code></pre>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
             <div class="request-block">
                 <h5>Cookies</h5>
                 <div class="highlight">
-                    <pre><code>{{request.cookies | jsonEmtpyFormat}}</code></pre>
+                    <pre><code>{{request.cookies | jsonEmptyFormat}}</code></pre>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
             request: {type: Object, required: true}
         },
         filters: {
-            jsonEmtpyFormat: function (value) {
+            jsonEmptyFormat: function (value) {
                 if (Object.keys(value).length === 0) {
                     return ""
                 }
