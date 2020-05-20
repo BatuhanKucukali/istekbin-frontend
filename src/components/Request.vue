@@ -36,13 +36,8 @@
         created() {
             fetch(`${process.env.VUE_APP_API_BASE_URL}/l/${this.$route.params.uuid}`)
                 .then((response) => {
-                   if (response.status == 200) {
-                       this.notFound = false;
-                    } else {
-                        this.notFound = true;
-                    }
-                return response.json();          
-
+                    this.notFound = !response.ok
+                    return response.json();
                 })
                 .then((requests) => this.requests = requests)
         }
