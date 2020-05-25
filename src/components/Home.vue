@@ -29,12 +29,14 @@
         },
         methods: {
             create() {
+                let router = this.$router;
+
                 fetch(`${process.env.VUE_APP_API_BASE_URL}/c/`, {method: 'post'})
                     .then(function (response) {
                         if (!response.ok) {
                             return Promise.reject(response);
                         }
-                        window.location = 'r/' + response.headers.get("Location")
+                        router.push('r/' + response.headers.get("Location"))
                     })
                     .catch(error => {
                         this.error = true

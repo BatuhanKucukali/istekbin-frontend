@@ -2,7 +2,7 @@
     <div>
         <div class="container request-main">
             <div class="row justify-content-md-center">
-                <div class="col-6">
+                <div class="col-md-8 col-sm-12">
                     <label>Bin URL</label>
                     <input disabled type="text" class="form-control" v-model="requestUrl">
                 </div>
