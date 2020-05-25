@@ -2,9 +2,18 @@
     <div>
         <div class="container request-main">
             <div class="row justify-content-md-center">
-                <div class="col-md-8 col-sm-12">
-                    <label>Bin URL</label>
+                <div class="d-flex justify-content-center">
+                    <h5>Your Bin Endpoint:</h5>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-7 col-sm-12">
                     <input disabled type="text" class="form-control" v-model="requestUrl">
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-primary col-md-12" @click="copy"><i class="fa fa-clipboard"
+                                                                                             aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -36,5 +45,16 @@
                 requestsListUrl: process.env.VUE_APP_API_BASE_URL + "/l/" + this.$route.params.uuid
             }
         },
+        methods: {
+            copy: function () {
+                this.$copyText(this.requestUrl).then(function (e) {
+                    alert('Copied')
+                    console.log(e)
+                }, function (e) {
+                    alert('Can not copy')
+                    console.log(e)
+                })
+            }
+        }
     }
 </script>
