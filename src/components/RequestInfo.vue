@@ -20,8 +20,10 @@
 
         <div class="container request-main">
             <div class="row justify-content-md-center">
-                <p class="info-text">No requests received yet.</p>
-                <p class="info-text">Try one of these and refresh to see the results:</p>
+                <p class="info-text"><i class="fa fa-exclamation" aria-hidden="true"></i>
+                    No requests received yet.</p>
+                <p class="info-text"><i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    Try one of these and refresh to see the results:</p>
             </div>
 
             <request-example :requestUrl=requestUrl></request-example>
@@ -30,8 +32,9 @@
 
         <div class="container request-main">
             <div class="row justify-content-md-center">
-                <p class="info-text">You can use command-line.</p>
-                <p><code>curl {{requestsListUrl}} | jq</code></p>
+                <p class="info-text"><i class="fa fa-terminal" aria-hidden="true"></i>
+                    You can use command-line.</p>
+                <pre v-highlightjs><code class="bash">curl {{requestsListUrl}} | jq</code></pre>
             </div>
         </div>
     </div>
