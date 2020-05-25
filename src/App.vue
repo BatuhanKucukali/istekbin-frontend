@@ -12,6 +12,19 @@
 
 
 <style>
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+    }
+
     .jumbotron {
         padding-top: 3rem;
         padding-bottom: 3rem;
@@ -71,6 +84,10 @@
 
     pre {
         word-wrap: normal;
+    }
+
+    .footer p {
+        font-family: "Helvetica Neue" !important;
     }
 
 </style>
