@@ -6,10 +6,12 @@ import App from './App.vue'
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Request from "./components/Request";
+import Toasted from "vue-toasted";
 
 Vue.use(VueRouter)
 Vue.use(Moment)
 Vue.use(VueClipboard)
+Vue.use(Toasted)
 
 Vue.config.productionTip = false
 

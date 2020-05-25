@@ -47,11 +47,12 @@
         },
         methods: {
             copy: function () {
-                this.$copyText(this.requestUrl).then(function (e) {
-                    alert('Copied')
-                    console.log(e)
+                let toast = this.$toasted.show({});
+
+                this.$copyText(this.requestUrl).then(function () {
+                    toast.text("Copied").goAway(3000)
                 }, function (e) {
-                    alert('Can not copy')
+                    toast.text("Can not copy!!!").goAway(3000)
                     console.log(e)
                 })
             }
