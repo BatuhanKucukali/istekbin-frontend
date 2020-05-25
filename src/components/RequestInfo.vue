@@ -20,29 +20,37 @@
 
         <div class="container request-main">
             <div class="row justify-content-md-center">
-                <p class="info-text">No requests received yet.</p>
-                <p class="info-text">Try one of these and refresh to see the results:</p>
-                <p><code>curl -H 'X-Status: Awesome' {{requestUrl}}</code></p>
-                <p><code>wget {{requestUrl}}?hello=world</code></p>
+                <p class="info-text"><i class="fa fa-exclamation" aria-hidden="true"></i>
+                    No requests received yet.</p>
+                <p class="info-text"><i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    Try one of these and refresh to see the results:</p>
             </div>
+
+            <request-example :requestUrl=requestUrl></request-example>
+
         </div>
 
         <div class="container request-main">
             <div class="row justify-content-md-center">
-                <p class="info-text">You can use command-line.</p>
-                <p><code>curl {{requestsListUrl}} | jq</code></p>
+                <p class="info-text"><i class="fa fa-terminal" aria-hidden="true"></i>
+                    You can use command-line.</p>
+                <pre v-highlightjs><code class="bash">curl {{requestsListUrl}} | jq</code></pre>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import RequestExample from "./RequestExample";
+
     export default {
         name: 'RequestInfo',
+        components: {RequestExample},
         data: function () {
             return {
                 requestUrl: process.env.VUE_APP_API_BASE_URL + "/r/" + this.$route.params.uuid,
-                requestsListUrl: process.env.VUE_APP_API_BASE_URL + "/l/" + this.$route.params.uuid
+                requestsListUrl: process.env.VUE_APP_API_BASE_URL + "/l/" + this.$route.params.uuid,
+                activeTabName: 'curl'
             }
         },
         methods: {
