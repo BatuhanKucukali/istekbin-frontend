@@ -13,7 +13,7 @@
             </template>
         </div>
 
-        <div v-if="notFound == true">
+        <div v-if="notFound === true">
             <not-found></not-found>
         </div>
     </div>

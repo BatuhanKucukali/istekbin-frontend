@@ -22,9 +22,10 @@
             <div class="row justify-content-md-center">
                 <p class="info-text">No requests received yet.</p>
                 <p class="info-text">Try one of these and refresh to see the results:</p>
-                <p><code>curl -H 'X-Status: Awesome' {{requestUrl}}</code></p>
-                <p><code>wget {{requestUrl}}?hello=world</code></p>
             </div>
+
+            <request-example :requestUrl=requestUrl></request-example>
+
         </div>
 
         <div class="container request-main">
@@ -37,12 +38,16 @@
 </template>
 
 <script>
+    import RequestExample from "./RequestExample";
+
     export default {
         name: 'RequestInfo',
+        components: {RequestExample},
         data: function () {
             return {
                 requestUrl: process.env.VUE_APP_API_BASE_URL + "/r/" + this.$route.params.uuid,
-                requestsListUrl: process.env.VUE_APP_API_BASE_URL + "/l/" + this.$route.params.uuid
+                requestsListUrl: process.env.VUE_APP_API_BASE_URL + "/l/" + this.$route.params.uuid,
+                activeTabName: 'curl'
             }
         },
         methods: {
