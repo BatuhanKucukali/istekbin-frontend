@@ -48,37 +48,37 @@
                 </li>
             </ul>
         </div>
-        <div class="card-body" v-show="activeTabName === 'curl'">
+        <div class="card-body" v-if="activeTabName === 'curl'">
             <curl :requestUrl=requestUrl></curl>
         </div>
-        <div class="card-body" v-show="activeTabName === 'php'">
+        <div class="card-body" v-if="activeTabName === 'php'">
             <php :requestUrl=requestUrl></php>
         </div>
-        <div class="card-body" v-show="activeTabName === 'vanilla-js'">
+        <div class="card-body" v-if="activeTabName === 'vanilla-js'">
             <vanilla-js :requestUrl=requestUrl></vanilla-js>
         </div>
-        <div class="card-body" v-show="activeTabName === 'node'">
+        <div class="card-body" v-if="activeTabName === 'node'">
             <node :requestUrl=requestUrl></node>
         </div>
-        <div class="card-body" v-show="activeTabName === 'jquery'">
+        <div class="card-body" v-if="activeTabName === 'jquery'">
             <jquery :requestUrl=requestUrl></jquery>
         </div>
-        <div class="card-body" v-show="activeTabName === 'go'">
+        <div class="card-body" v-if="activeTabName === 'go'">
             <go :requestUrl=requestUrl></go>
         </div>
-        <div class="card-body" v-show="activeTabName === 'ruby'">
+        <div class="card-body" v-if="activeTabName === 'ruby'">
             <ruby-language :requestUrl=requestUrl></ruby-language>
         </div>
-        <div class="card-body" v-show="activeTabName === 'python'">
+        <div class="card-body" v-if="activeTabName === 'python'">
             <python :requestUrl=requestUrl></python>
         </div>
-        <div class="card-body" v-show="activeTabName === 'perl'">
+        <div class="card-body" v-if="activeTabName === 'perl'">
             <perl :requestUrl=requestUrl></perl>
         </div>
-        <div class="card-body" v-show="activeTabName === 'java'">
+        <div class="card-body" v-if="activeTabName === 'java'">
             <java :requestUrl=requestUrl></java>
         </div>
-        <div class="card-body" v-show="activeTabName === 'net'">
+        <div class="card-body" v-if="activeTabName === 'net'">
             <net :requestUrl=requestUrl></net>
         </div>
     </div>
