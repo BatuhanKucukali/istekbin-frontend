@@ -12,16 +12,18 @@
 
             <alert v-if="error"></alert>
 
+            <history></history>
         </div>
     </section>
 </template>
 
 <script>
     import Alert from "./Alert";
+    import History from "./History";
 
     export default {
         name: 'Home',
-        components: {Alert},
+        components: {History, Alert},
         data: function () {
             return {
                 error: false
@@ -31,7 +33,7 @@
             create() {
                 let router = this.$router;
 
-                fetch(`${process.env.VUE_APP_API_BASE_URL}/c/`, {method: 'post'})
+                fetch(`${process.env.VUE_APP_API_BASE_URL}/c`, {method: 'post'})
                     .then(function (response) {
                         if (!response.ok) {
                             return Promise.reject(response);
