@@ -24,7 +24,7 @@
             }
         },
         mounted() {
-            fetch(`${process.env.VUE_APP_API_BASE_URL}/cl`)
+            fetch(`${process.env.VUE_APP_API_BASE_URL}/bins`)
                 .then((response) => {
                     return response.json();
                 })

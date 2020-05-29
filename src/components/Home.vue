@@ -33,7 +33,7 @@
             create() {
                 let router = this.$router;
 
-                fetch(`${process.env.VUE_APP_API_BASE_URL}/c`, {method: 'post'})
+                fetch(`${process.env.VUE_APP_API_BASE_URL}/bins`, {method: 'post'})
                     .then(function (response) {
                         if (!response.ok) {
                             return Promise.reject(response);
