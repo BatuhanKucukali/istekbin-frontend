@@ -10,6 +10,8 @@ import Toasted from "vue-toasted";
 import VueHighlightJS from "vue-highlightjs";
 
 import 'highlight.js/styles/idea.css';
+import ApiDoc from "./components/ApiDoc";
+import Limit from "./components/Limit";
 
 Vue.use(VueRouter)
 Vue.use(Moment)
@@ -22,6 +24,8 @@ Vue.config.productionTip = false
 const routes = [
     {path: '/', component: Home},
     {path: '/r/:uuid', component: Request},
+    {path: '/api-doc', component: ApiDoc},
+    {path: '/limits', component: Limit},
     {path: '/*', component: NotFound},
 ]
 

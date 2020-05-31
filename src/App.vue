@@ -90,4 +90,12 @@
         font-family: "Helvetica Neue" !important;
     }
 
+    .page p {
+        font-family: "Helvetica Neue" !important;
+    }
+
+    .faq-item {
+        margin-top: 10px;
+    }
+
 </style>
