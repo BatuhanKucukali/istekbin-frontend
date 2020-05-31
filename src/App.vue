@@ -90,4 +90,8 @@
         font-family: "Helvetica Neue" !important;
     }
 
+    .page p {
+        font-family: "Helvetica Neue" !important;
+    }
+
 </style>
