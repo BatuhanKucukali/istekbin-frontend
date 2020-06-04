@@ -12,6 +12,7 @@ import VueHighlightJS from "vue-highlightjs";
 import 'highlight.js/styles/idea.css';
 import ApiDoc from "./components/ApiDoc";
 import Limit from "./components/Limit";
+import RickRolled from './components/RickRolled'
 
 Vue.use(VueRouter)
 Vue.use(Moment)
@@ -26,7 +27,8 @@ const routes = [
     {path: '/r/:uuid', component: Request},
     {path: '/api-doc', component: ApiDoc},
     {path: '/limits', component: Limit},
-    {path: '/*', component: NotFound},
+    {path: '/rickrolled', component: RickRolled},
+    {path: '/*', component: NotFound}
 ]
 
 const router = new VueRouter({

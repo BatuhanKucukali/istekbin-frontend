@@ -17,6 +17,14 @@
         min-height: 100%;
     }
 
+    body {
+        background-color: white;
+    }
+
+    body.rickrolled {
+        background-color: black;
+    }
+
     .footer {
         position: absolute;
         bottom: 0;

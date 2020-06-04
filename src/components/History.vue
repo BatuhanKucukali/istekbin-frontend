@@ -24,8 +24,14 @@
             }
         },
         mounted() {
+            let router = this.$router;
+
             fetch(`${process.env.VUE_APP_API_BASE_URL}/bins`)
                 .then((response) => {
+                    if (response.status === 429) {
+                        router.push('/rickrolled')
+                        return;
+                    }
                     return response.json();
                 })
                 .then((binItems) => this.binItems = binItems)

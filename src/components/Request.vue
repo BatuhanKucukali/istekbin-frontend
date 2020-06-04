@@ -34,8 +34,14 @@
             }
         },
         created() {
+            let router = this.$router;
+
             fetch(`${process.env.VUE_APP_API_BASE_URL}/l/${this.$route.params.uuid}`)
                 .then((response) => {
+                    if (response.status === 429) {
+                        router.push('/rickrolled')
+                        return;
+                    }
                     this.notFound = !response.ok
                     return response.json();
                 })
